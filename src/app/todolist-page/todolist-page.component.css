@@ -1,9 +1,28 @@
 header {
   height: 80px;
-  background: lightblue;
+  margin: 15px;
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.header-day {
+  margin: 0;
+}
+
+.header-task-count {
   margin-top: 10px;
+  text-align: right;
+}
+
+.header-month {
+  margin-left: 5px;
 }
 
 #header-title {
   display: inline-block;
+}
+
+.divider {
+  color: hsl(207deg 38% 94%);
+  border-color: hsl(207deg 38% 94%);
 }
