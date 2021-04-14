@@ -1,0 +1,9 @@
+header {
+  height: 80px;
+  background: lightblue;
+  margin-top: 10px;
+}
+
+#header-title {
+  display: inline-block;
+}
