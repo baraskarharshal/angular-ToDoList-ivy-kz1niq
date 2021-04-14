@@ -6,7 +6,7 @@ body {
 }
 
 #top-bg {
-  background: red;
+  background: hsl(238deg 73% 62%);
   height: 100vh;
   overflow: hidden;
 }
@@ -15,7 +15,7 @@ body {
   position: relative;
   top: 70%;
   left: -20%;
-  background: blue;
+  background: hsl(359deg 81% 68%);
   width: 130%;
   height: 70%;
   transform: rotate(15deg);
