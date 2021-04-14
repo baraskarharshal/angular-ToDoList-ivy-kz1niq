@@ -3,6 +3,7 @@
 body {
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 #top-bg {
@@ -22,8 +23,11 @@ body {
 }
 
 #main-playground {
+  z-index: 3;
   position: absolute;
-  top:0;
-  height:100vh;
-  width:100vw;
+  background: white;
+  border-radius: 10px;
+  height: 100%;
+  width: 80%;
+  margin: 10% 10% 0 10%;
 }
