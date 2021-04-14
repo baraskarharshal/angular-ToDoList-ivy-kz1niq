@@ -1,1 +1,22 @@
 /* Add application styles & imports to this file! */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#top-bg {
+  background: red;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#bottom-bg {
+  position: relative;
+  top: 70%;
+  left: -20%;
+  background: blue;
+  width: 130%;
+  height: 70%;
+  transform: rotate(15deg);
+}
