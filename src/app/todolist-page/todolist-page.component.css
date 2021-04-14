@@ -1,6 +1,6 @@
 header {
   height: 80px;
-  margin: 15px;
+  margin: 15px 15px 0 16px;
   display: grid;
   grid-template-columns: auto auto;
 }
@@ -25,4 +25,19 @@ header {
 .divider {
   color: hsl(207deg 38% 94%);
   border-color: hsl(207deg 38% 94%);
+}
+
+.add-btn {
+  background: hsl(359deg 81% 68%);
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  font-size: 20px;
+  padding-bottom: 10px;
+  margin-top: -27px;
+  margin-right: 20px;
+  display: block;
+  float: right;
+  cursor: pointer;
 }
