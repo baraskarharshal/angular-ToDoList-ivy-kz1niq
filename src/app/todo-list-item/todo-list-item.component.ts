@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
+import { CustomModalService } from "../custom-modal.service";
 import { ToDoItem } from "../todo-item";
 
 @Component({
@@ -8,10 +9,37 @@ import { ToDoItem } from "../todo-item";
 })
 export class TodoListItemComponent implements OnInit {
   @Input() item: ToDoItem;
+  @Output() edit: EventEmitter<ToDoItem> = new EventEmitter();
+  @Output() delete: EventEmitter<ToDoItem> = new EventEmitter();
 
-  constructor() {}
+  title: string;
+  description: string;
+
+  constructor(private modalService: CustomModalService) {}
 
   ngOnInit() {}
 
-  onDeleteItem() {}
+  updateItem() {
+    this.item.title = this.title;
+    this.item.description = this.description;
+    this.edit.emit(this.item);
+    this.closeModal("edit-modal");
+  }
+  onDeleteItem() {
+    this.delete.emit(this.item);
+  }
+
+  onEditItem() {
+    this.title = this.item.title;
+    this.description = this.item.description;
+    this.openModal("edit-modal");
+  }
+
+  openModal(id: string) {
+    this.modalService.open(id);
+  }
+
+  closeModal(id: string) {
+    this.modalService.close(id);
+  }
 }

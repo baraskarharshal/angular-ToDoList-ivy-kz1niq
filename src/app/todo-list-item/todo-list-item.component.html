@@ -1,4 +1,12 @@
-<div class="todoItem">
+<div class="todoItem" (click)="onEditItem()">
   <span>{{item.title}}</span>
   <span class="delete-btn" (click)="onDeleteItem()"><i class="far fa-trash-alt"></i></span>
 </div>
+
+<app-custom-modal id="edit-modal">
+  <h1>Add New Item</h1>
+  <input [(ngModel)]="title" type="text">
+  <textarea rows="10" [(ngModel)]="description" type="text"></textarea>
+  <button (click)="updateItem()">Update</button>
+  <button (click)="closeModal('edit-modal')">Cancel</button>
+</app-custom-modal>

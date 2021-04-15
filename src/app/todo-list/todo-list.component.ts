@@ -11,18 +11,18 @@ export class TodoListComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {
-    this.list = [
-      {
-        title: "Buy Pizza on the way to work.",
-        description: "Buy Pizza on the way to work.",
-        date: new Date()
-      },
-      {
-        title: "10AM Meeting",
-        description: "10AM Meeting",
-        date: new Date()
+  ngOnInit() {}
+
+  onEditItem(item: ToDoItem) {
+    this.list.forEach(itm => {
+      if (itm.id === item.id) {
+        itm.title = item.title;
+        itm.description = item.description;
       }
-    ];
+    });
+  }
+
+  onDeleteItem(item: ToDoItem) {
+    this.list = this.list.filter(itm => itm.id !== item.id);
   }
 }
