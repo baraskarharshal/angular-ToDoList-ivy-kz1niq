@@ -7,10 +7,13 @@ import { HelloComponent } from './hello.component';
 import { TodolistPageComponent } from './todolist-page/todolist-page.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { TodoListItemComponent } from './todo-list-item/todo-list-item.component';
+import { CustomModalComponent } from './custom-modal/custom-modal.component';
+import { CustomModalService } from './custom-modal.service';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, HelloComponent, TodolistPageComponent, TodoListComponent, TodoListItemComponent ],
-  bootstrap:    [ AppComponent ]
+  declarations: [ AppComponent, HelloComponent, TodolistPageComponent, TodoListComponent, TodoListItemComponent, CustomModalComponent ],
+  bootstrap:    [ AppComponent ],
+  providers: [CustomModalService]
 })
 export class AppModule { }

@@ -4,8 +4,14 @@
   <span class="header-month">December</span>
 </header>
 <hr class="divider">
-<button class="btn add-btn">+</button>
+<button class="btn add-btn" (click)="openModal('custom-modal-1')">+</button>
 
 <div id="toDoList">
   <app-todo-list></app-todo-list>
 </div>
+
+<app-custom-modal id="custom-modal-1">
+  <h1>A Custom Modal!</h1>
+  <p>Home page text: </p>
+  <button (click)="closeModal('custom-modal-1');">Close</button>
+</app-custom-modal>
