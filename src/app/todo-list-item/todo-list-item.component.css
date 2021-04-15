@@ -1,0 +1,10 @@
+.todoItem {
+  padding: 20px;
+  border-bottom: 1px solid grey;
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.delete-btn {
+  text-align: right;
+}

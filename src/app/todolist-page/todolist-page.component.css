@@ -41,3 +41,7 @@ header {
   float: right;
   cursor: pointer;
 }
+
+#toDoList {
+  margin-top: 25px;
+}
