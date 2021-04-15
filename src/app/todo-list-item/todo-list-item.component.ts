@@ -12,4 +12,6 @@ export class TodoListItemComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  onDeleteItem() {}
 }

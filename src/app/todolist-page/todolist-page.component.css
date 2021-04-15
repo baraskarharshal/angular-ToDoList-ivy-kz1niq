@@ -7,6 +7,7 @@ header {
 
 .header-day {
   margin: 0;
+  color: hsl(238deg 73% 62%);
 }
 
 .header-task-count {
@@ -23,8 +24,9 @@ header {
 }
 
 .divider {
-  color: hsl(207deg 38% 94%);
-  border-color: hsl(207deg 38% 94%);
+  height: 1px;
+  background: #8888a070;
+  border: none;
 }
 
 .add-btn {
