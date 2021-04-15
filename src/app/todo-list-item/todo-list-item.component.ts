@@ -32,7 +32,10 @@ export class TodoListItemComponent implements OnInit {
   onEditItem() {
     this.title = this.item.title;
     this.description = this.item.description;
-    this.openModal("edit-modal");
+    console.log(this.item);
+    setTimeout(() => {
+      this.openModal("edit-modal");
+    }, 100);
   }
 
   openModal(id: string) {

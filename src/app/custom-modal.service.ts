@@ -7,11 +7,13 @@ export class CustomModalService {
   add(modal: any) {
     // add modal to array of active modals
     this.modals.push(modal);
+    console.log("modal added " + modal.id);
   }
 
   remove(id: string) {
     // remove modal from array of active modals
     this.modals = this.modals.filter(x => x.id !== id);
+    console.log("modal removed " + id);
   }
 
   open(id: string) {

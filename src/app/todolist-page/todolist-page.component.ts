@@ -8,7 +8,7 @@ import { TodoListComponent } from "../todo-list/todo-list.component";
   styleUrls: ["./todolist-page.component.css"]
 })
 export class TodolistPageComponent implements OnInit {
-  @ViewChild(TodoListComponent, { static: true }) toDoList: TodoListComponent;
+  @ViewChild(TodoListComponent, { static: false }) toDoList: TodoListComponent;
   title: string;
   description: string;
 
