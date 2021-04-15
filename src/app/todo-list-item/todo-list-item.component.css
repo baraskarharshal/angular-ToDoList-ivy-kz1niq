@@ -1,12 +1,12 @@
 .todoItem {
   padding: 20px;
-  border-bottom: 1px solid #8888a070;
+  border-bottom: 1px solid var(--lightgrey);
   display: grid;
   grid-template-columns: auto auto;
 }
 
 .delete-btn {
   text-align: right;
-  color: hsl(359deg 81% 68%);
+  color: var(--red);
   cursor: pointer;
 }
