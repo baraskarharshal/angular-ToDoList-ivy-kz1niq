@@ -6,6 +6,7 @@
   --red: hsl(359deg 81% 68%);
   --grey: #8888a0;
   --lightgrey: #8888a070;
+  --lightblue: lightblue;
 }
 
 body {
@@ -23,6 +24,12 @@ hr {
 .btn {
   padding: 8px;
   border: none;
+  cursor: pointer;
+}
+
+.btn-success {
+  background: var(--blue);
+  color: white;
 }
 
 #top-bg {
@@ -49,4 +56,41 @@ hr {
   height: 100%;
   width: 80%;
   margin: 10% 10% 0 10%;
+}
+
+/* custom modal styles */
+
+.custom-modal-body-container {
+  display: grid;
+}
+
+.modal-title {
+  font-size: 20px;
+  color: var(--blue);
+}
+
+.custom-modal-body-container p,
+h1,
+input,
+textarea {
+  margin: 10px;
+}
+
+.custom-modal-footer {
+  margin: 10px;
+  text-align: right;
+}
+
+.custom-modal-footer button {
+  margin: 0 10px 0 10px;
+  border-radius: 5px;
+}
+
+.custom-modal-body-container input {
+  height: 20px;
+  border: 1px solid var(--lightblue);
+}
+
+.custom-modal-body-container textarea {
+  border: 1px solid var(--lightblue);
 }

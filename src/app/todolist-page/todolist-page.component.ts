@@ -13,6 +13,17 @@ export class TodolistPageComponent implements OnInit {
   addModal: CustomModalComponent;
   title: string;
   description: string;
+  today = new Date();
+
+  days = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday"
+  ];
 
   constructor() {}
 

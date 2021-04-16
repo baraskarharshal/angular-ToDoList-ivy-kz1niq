@@ -3,10 +3,35 @@
   border-bottom: 1px solid var(--lightgrey);
   display: grid;
   grid-template-columns: auto auto;
+  background: var(--white);
+  cursor: pointer;
+}
+
+.todoItem:hover {
+  background: var(--lightgrey);
 }
 
 .delete-btn {
   text-align: right;
   color: var(--red);
   cursor: pointer;
+}
+
+#edit-modal-body {
+  display: grid;
+}
+
+#edit-modal-body h1,
+input,
+textarea {
+  margin: 10px;
+}
+
+#edit-modal-footer {
+  margin: 10px;
+  text-align: right;
+}
+
+#edit-modal-footer button {
+  margin: 0 10px 0 10px;
 }

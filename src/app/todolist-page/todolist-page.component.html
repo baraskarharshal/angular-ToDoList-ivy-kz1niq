@@ -1,7 +1,7 @@
 <header>
-  <h2 class="header-day">Thursday, 10<sup><small>th</small></sup></h2>
-  <span class="header-task-count">12 Tasks</span>
-  <span class="header-month">December</span>
+  <h2 class="header-day">{{days[today.getDay()] + ',' + today.getDate()}}</h2>
+  <span class="header-task-count">{{toDoList? toDoList.list.length : 0}} Tasks</span>
+  <span class="header-month">{{today.toLocaleString('default', { month: 'long' })}}</span>
 </header>
 <hr class="divider">
 <button class="btn add-btn" (click)="onClickAddItem()">+</button>
@@ -11,9 +11,13 @@
 </div>
 
 <app-custom-modal id="add-modal">
-  <h1>Add New Item</h1>
-  <input [(ngModel)]="title" type="text">
-  <textarea rows="10" [(ngModel)]="description" type="text"></textarea>
-  <button (click)="addItem()">Add</button>
-  <button (click)="addModal.close()">Cancel</button>
+  <div class="custom-modal-body-container">
+    <p class="modal-title">Add New Item</p>
+    <input [(ngModel)]="title" type="text">
+    <textarea rows="10" [(ngModel)]="description" type="text"></textarea>
+    <div class="custom-modal-footer">
+      <button class="btn btn-success" (click)="addItem()">Add</button>
+      <button class="btn" (click)="addModal.close()">Cancel</button>
+    </div>
+  </div>
 </app-custom-modal>
