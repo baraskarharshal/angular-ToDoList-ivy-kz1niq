@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { CustomModalService } from "../custom-modal.service";
+import { CustomModalComponent } from "../custom-modal/custom-modal.component";
 import { TodoListComponent } from "../todo-list/todo-list.component";
 
 @Component({
@@ -9,17 +9,19 @@ import { TodoListComponent } from "../todo-list/todo-list.component";
 })
 export class TodolistPageComponent implements OnInit {
   @ViewChild(TodoListComponent, { static: false }) toDoList: TodoListComponent;
+  @ViewChild(CustomModalComponent, { static: false })
+  addModal: CustomModalComponent;
   title: string;
   description: string;
 
-  constructor(private modalService: CustomModalService) {}
+  constructor() {}
 
   ngOnInit() {}
 
   onClickAddItem() {
     this.title = "";
     this.description = "";
-    this.openModal("add-modal");
+    this.addModal.open();
   }
 
   addItem() {
@@ -30,15 +32,7 @@ export class TodolistPageComponent implements OnInit {
       date: new Date()
     });
 
-    this.closeModal("add-modal");
-  }
-
-  openModal(id: string) {
-    this.modalService.open(id);
-  }
-
-  closeModal(id: string) {
-    this.modalService.close(id);
+    this.addModal.close();
   }
 
   getUniqueId() {

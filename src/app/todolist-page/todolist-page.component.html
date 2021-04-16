@@ -15,5 +15,5 @@
   <input [(ngModel)]="title" type="text">
   <textarea rows="10" [(ngModel)]="description" type="text"></textarea>
   <button (click)="addItem()">Add</button>
-  <button (click)="closeModal('add-modal')">Cancel</button>
+  <button (click)="addModal.close()">Cancel</button>
 </app-custom-modal>

@@ -8,5 +8,5 @@
   <input [(ngModel)]="title" type="text">
   <textarea rows="10" [(ngModel)]="description" type="text"></textarea>
   <button (click)="updateItem()">Update</button>
-  <button (click)="closeModal('edit-modal')">Cancel</button>
+  <button (click)="editModal.close();">Cancel</button>
 </app-custom-modal>

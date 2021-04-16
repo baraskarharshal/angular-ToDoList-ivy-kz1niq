@@ -1,5 +1,13 @@
-import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
-import { CustomModalService } from "../custom-modal.service";
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  ViewChild
+} from "@angular/core";
+
+import { CustomModalComponent } from "../custom-modal/custom-modal.component";
 import { ToDoItem } from "../todo-item";
 
 @Component({
@@ -8,6 +16,8 @@ import { ToDoItem } from "../todo-item";
   styleUrls: ["./todo-list-item.component.css"]
 })
 export class TodoListItemComponent implements OnInit {
+  @ViewChild(CustomModalComponent, { static: false })
+  editModal: CustomModalComponent;
   @Input() item: ToDoItem;
   @Output() edit: EventEmitter<ToDoItem> = new EventEmitter();
   @Output() delete: EventEmitter<ToDoItem> = new EventEmitter();
@@ -15,7 +25,7 @@ export class TodoListItemComponent implements OnInit {
   title: string;
   description: string;
 
-  constructor(private modalService: CustomModalService) {}
+  constructor() {}
 
   ngOnInit() {}
 
@@ -23,7 +33,7 @@ export class TodoListItemComponent implements OnInit {
     this.item.title = this.title;
     this.item.description = this.description;
     this.edit.emit(this.item);
-    this.closeModal("edit-modal");
+    this.editModal.close();
   }
   onDeleteItem() {
     this.delete.emit(this.item);
@@ -32,17 +42,6 @@ export class TodoListItemComponent implements OnInit {
   onEditItem() {
     this.title = this.item.title;
     this.description = this.item.description;
-    console.log(this.item);
-    setTimeout(() => {
-      this.openModal("edit-modal");
-    }, 100);
-  }
-
-  openModal(id: string) {
-    this.modalService.open(id);
-  }
-
-  closeModal(id: string) {
-    this.modalService.close(id);
+    this.editModal.open();
   }
 }
