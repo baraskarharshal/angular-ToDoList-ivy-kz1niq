@@ -45,4 +45,6 @@ header {
 
 #toDoList {
   margin-top: 25px;
+  overflow-y: auto;
+  height: 60vh;
 }
